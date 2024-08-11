@@ -1,10 +1,10 @@
 {
-  "name": "mwtu-md@v2.0.0",
+  "name": "mwtu-md@v0.0.0",
   "description": "I am Mwtu-Md Whatsapp MultiDevice Whatsapp Bot built in NodeJs to make experience better",
-  "website": "https://mwtu-scanner.onrender.com/",
-  "repository": "https://github.com/Mwtutech/Mwtu-md",
+  "website": "",
+  "repository": "https://github.com/mwtutech/mwtu-md",
   "logo": "https://telegra.ph/file/cc6f595431b134c1d7a46.jpg",
-  "keywords": ["mwtu-md", "mwtutech", "mwtu"],
+  "keywords": ["mwtu-md", "mwtutech", "Mwtu-Md"],
   "success_url": "/",
   "stack": "heroku-24",
   "env": { 
@@ -15,13 +15,23 @@
     },
      "OWNER_NAME": {
       "description": "Put the name of Bot Owner",
-      "required": false,
+      "required": true,
       "value": "MWTU TECH"
     },
     "OWNER_NUMBER": {
       "description": "Put Bot Owner Numbers",
-      "required": false,
+      "required": true,
       "value": "254716490732"
+    },
+    "AUTO_STICKER": {
+      "description": "Put true/false to enable auto conversion of videos and photos as stickers",
+      "required": false,
+      "value": "false"
+    },
+    "SESSION_ID": {
+      "description": "Put your SESSION_ID.  Must start with Mwtu~....Leave Blank if you're Deploying Using Creds.json",
+      "required": false,
+      "value": ""
     },
      "NOT_ALLOW": {
       "description": "Put value true to disable bot in pm during public mode.",
@@ -30,7 +40,7 @@
     },
      "WELCOME": {
       "description": "Put true or false to enableand disable group welcoming and goodbye messages",
-      "required": false,
+      "required": true,
       "value": "false"
     },
     "AUTO_READ_STATUS": {
@@ -55,13 +65,13 @@
     },
     "ALWAYS_ONLINE": {
       "description": "Put true if you want bot to show always online",
-      "required": false,
+      "required": true,
       "value": "true"
     },
     "AUTO_DOWNLOAD": {
       "description": "Put true if you need to download media by using link without cmd",
       "required": false,
-      "value": "true"
+      "value": "false"
     },
     "AUTO_BLOCK": {
       "description": "Put true if you want bot to auto block only 212 numbers",
@@ -90,20 +100,19 @@
     },
     "AUTO_REJECT_CALLS": {
       "description": "Put true if you want to reject call",
-      "required": false,
+      "required": true,
       "value": "false"
      }
     },
     "formation": {
                 "web": {
                         "quantity": 1,
-                        "size": "Standard-2X"
+                        "size": "basic"
                 }
         },
     "addons": [{ "plan": "heroku-postgresql:essential-0" }],
     "buildpacks": [
     {"url": "https://github.com/heroku/heroku-buildpack-nodejs#latest"},
-    {"url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"},
     {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"},
     {"url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"}
   ]
